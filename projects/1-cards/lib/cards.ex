@@ -4,14 +4,11 @@ defmodule Cards do
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Cards.hello()
-      :world
-
   """
+  def create_deck do
+    ["Ace", "Two", "Three"]
+  end
+
   def hello do
     "hi there!"
   end
