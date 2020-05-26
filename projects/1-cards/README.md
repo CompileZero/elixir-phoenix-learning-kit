@@ -69,3 +69,12 @@ For Example:
 
 ![Functional Programming concept](media/cards_fp.png)
 Modules are collection of methods, and nothing else. There are no instance variables.
+
+After creating your first method, you might encounter this error:
+
+`** (UndefinedFunctionError) function Cards.shuffle/0 is undefined or private (cards 0.1.0) Cards.shuffle()`
+Here `Cards.shuffle/0` means that shuffle method having `0` arguments, but we do not have such a method, we have something like `Cards.shuffle/1`, because we need to pass an argument `deck` to the shuffle method.
+
+`arity` refers to number of arguments that need to be passed. eg: `shuffle/1` means that the `arity` is 1.
+
+Elixir standard library includes lists, numbers, file-system, http library.
