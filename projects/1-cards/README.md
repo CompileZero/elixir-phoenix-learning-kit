@@ -57,3 +57,10 @@ strings like is two and three.
 Notice I'm using double quotes in here as opposed to single quotes, They are are supported, but double quotes are convention,
 
 Recompile: Elixir runtime cannot automatically check for and build changes in the code, it has to be done manually by the command "recompile"
+
+Object Oriented vs Functional Programming:
+Diff 1:
+
+![Object Oriented concept](media/cards_oo.png)
+
+In OO approach, we have an instance of a class, with some moethods, which operate on its local instance variable.
