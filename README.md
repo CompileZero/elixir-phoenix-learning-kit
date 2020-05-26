@@ -2,7 +2,7 @@
 
 ## Elixir
 
-### Mix
+### Mix - Build Tool
 
 #### Creates Projects
 
