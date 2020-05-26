@@ -63,4 +63,9 @@ Diff 1:
 
 ![Object Oriented concept](media/cards_oo.png)
 
-In OO approach, we have an instance of a class, with some moethods, which operate on its local instance variable.
+In OO approach, we have an instance of a class, with some methods, which operate on its local instance variable.
+For Example:
+![Object Oriented concept](media/cards_oo2.png)
+
+![Functional Programming concept](media/cards_fp.png)
+Modules are collection of methods, and nothing else. There are no instance variables.
