@@ -67,6 +67,8 @@ For eg: for a sample method `contains` which takes in arguments `deck, hand` & r
 `def contains?(deck, hand) do //Enter body here end`
 Notice, the ? does not do anything, except that it used as a convention.
 
+### List: A collection of similiar records.
+
 ### List comprehension:
 
 ![List comprehension](media/list_comprehension.png)
@@ -84,3 +86,7 @@ Whenever a nested list comprehension method is called, it finally returns a list
 
 Solution 2: A much efficient solution.
 `for suit <- suits, value <- values do "#{value} of #{suit}" end`
+
+#### Tuples: A collection of different types, but is indexed, which means the order carries some meaning
+
+`{["elem1","elem2","elem3","elem4"] , ["elem4","elem5","elem6"]}`
