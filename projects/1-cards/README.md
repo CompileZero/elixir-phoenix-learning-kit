@@ -75,3 +75,9 @@ Notice, the ? does not do anything, except that it used as a convention.
 This can be read as,
 
 > For every element in suits, return the element. And the entire returned array is a map.
+
+> 💡 Elixir supports template literals `"#{value} of #{suit}"`
+
+#### Nested Comprehension
+
+Whenever a nested list comprehension method is called, it finally returns a list of list, so to convert it into a simple list, use List.flatten function.
