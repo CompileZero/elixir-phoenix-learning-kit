@@ -81,3 +81,6 @@ This can be read as,
 #### Nested Comprehension
 
 Whenever a nested list comprehension method is called, it finally returns a list of list, so to convert it into a simple list, use List.flatten function.
+
+Solution 2: A much efficient solution.
+`for suit <- suits, value <- values do "#{value} of #{suit}" end`
