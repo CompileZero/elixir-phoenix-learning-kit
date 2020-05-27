@@ -3,7 +3,7 @@ defmodule Cards do
     ["Ace", "Two", "Three"]
   end
 
-  def hello do
-    "hi there!"
+  def shuffle(deck) do
+    Enum.shuffle(deck)
   end
 end
