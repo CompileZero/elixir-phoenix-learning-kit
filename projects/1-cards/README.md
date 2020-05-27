@@ -98,3 +98,9 @@ Solution 2: A much efficient solution.
 `{hand, deck} = {Hand, The Rest} #Here, Hand list is stored in hand variable, and The Rest list is stored in deck variable. In this way both of the values of the tuple can be extraced`
 
 > Anytime you use equals, think pattern matching
+
+### How does elixir work?
+
+![Elixir Code Execution](media/eli_to_execution.png)
+
+###### Erlang was used for telephony purposes
