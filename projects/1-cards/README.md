@@ -60,3 +60,9 @@ Elixir standard library includes lists, numbers, file-system, http library.
 
 Immutability in Elixir: We cannot modify any data structure in Elixir. Every data structure is immutable. Whenever we modify a data structure, we create a new data structure and return.
 ![Immutability concept](media/cards_shuffle1.png)
+
+Convention: Whenever, a function/method is supposed to return a true/false (boolean value), use a post-fix of `?` to indicate the same.
+
+For eg: for a sample method `contains` which takes in arguments `deck, hand` & returns either `true/false`, this method can be defined as follows:
+`def contains?(deck, hand) do //Enter body here end`
+Notice, the ? does not do anything, except that it used as a convention.
