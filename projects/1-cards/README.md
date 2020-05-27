@@ -66,3 +66,12 @@ Convention: Whenever, a function/method is supposed to return a true/false (bool
 For eg: for a sample method `contains` which takes in arguments `deck, hand` & returns either `true/false`, this method can be defined as follows:
 `def contains?(deck, hand) do //Enter body here end`
 Notice, the ? does not do anything, except that it used as a convention.
+
+### List comprehension:
+
+![List comprehension](media/list_comprehension.png)
+
+`for suit <- suits do suit end`
+This can be read as,
+
+> For every element in suits, return the element. And the entire returned array is a map.
