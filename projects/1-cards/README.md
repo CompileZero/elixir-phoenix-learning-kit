@@ -57,3 +57,6 @@ Here `Cards.shuffle/0` means that shuffle method having `0` arguments, but we do
 `arity` refers to number of arguments that need to be passed. eg: `shuffle/1` means that the `arity` is 1.
 
 Elixir standard library includes lists, numbers, file-system, http library.
+
+Immutability in Elixir: We cannot modify any data structure in Elixir. Every data structure is immutable. Whenever we modify a data structure, we create a new data structure and return.
+![Immutability concept](media/cards_shuffle1.png)
