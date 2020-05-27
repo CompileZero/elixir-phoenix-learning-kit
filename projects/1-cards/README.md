@@ -90,3 +90,11 @@ Solution 2: A much efficient solution.
 #### Tuples: A collection of different types, but is indexed, which means the order carries some meaning
 
 `{["elem1","elem2","elem3","elem4"] , ["elem4","elem5","elem6"]}`
+
+`deck[0] does not work in elixir for lists or tuples, we cannot get an element at the 0th index in this manner.`
+
+### Pattern Matching: Elixir's replacement for variable assignment which means
+
+`{hand, deck} = {Hand, The Rest} #Here, Hand list is stored in hand variable, and The Rest list is stored in deck variable. In this way both of the values of the tuple can be extraced`
+
+> Anytime you use equals, think pattern matching
