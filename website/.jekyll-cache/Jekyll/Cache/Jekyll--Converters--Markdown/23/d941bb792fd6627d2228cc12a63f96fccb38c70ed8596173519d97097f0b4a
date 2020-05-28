@@ -1,4 +1,4 @@
-I"a<h1 class="fs-9" id="focus-on-writing-good-documentation">Focus on writing good documentation</h1>
+I"N<h1 class="fs-9" id="focus-on-writing-good-documentation">Focus on writing good documentation</h1>
 
 <p class="fs-6 fw-300">Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.</p>
 
@@ -15,38 +15,53 @@
 <h3 id="quick-start-use-as-a-github-pages-remote-theme">Quick start: Use as a GitHub Pages remote theme</h3>
 
 <ol>
-  <li>Add Just the Docs to your Jekyll site’s <code class="highlighter-rouge">_config.yml</code> as a <a href="https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/">remote theme</a>
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">remote_theme</span><span class="pi">:</span> <span class="s">pmarsceill/just-the-docs</span>
-</code></pre></div>    </div>
-    <p><small>You must have GitHub Pages enabled on your repo, one or more Markdown files, and a <code class="highlighter-rouge">_config.yml</code> file. <a href="https://github.com/pmarsceill/jtd-remote">See an example repository</a></small></p>
-  </li>
+  <li>Add Just the Docs to your Jekyll site’s <code class="highlighter-rouge">_config.yml</code> as a <a href="https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/">remote theme</a></li>
 </ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">remote_theme</span><span class="pi">:</span> <span class="s">pmarsceill/just-the-docs</span>
+</code></pre></div></div>
+
+<p><small>You must have GitHub Pages enabled on your repo, one or more Markdown files, and a <code class="highlighter-rouge">_config.yml</code> file. <a href="https://github.com/pmarsceill/jtd-remote">See an example repository</a></small></p>
 
 <h3 id="local-installation-use-the-gem-based-theme">Local installation: Use the gem-based theme</h3>
 
 <ol>
-  <li>Install the Ruby Gem
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gem <span class="nb">install </span>just-the-docs
-</code></pre></div>    </div>
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .. or add it to your your Jekyll site’s Gemfile</span>
+  <li>Install the Ruby Gem</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gem <span class="nb">install </span>just-the-docs
+</code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .. or add it to your your Jekyll site’s Gemfile</span>
 <span class="s">gem "just-the-docs"</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Add Just the Docs to your Jekyll site’s <code class="highlighter-rouge">_config.yml</code>
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">just-the-docs"</span>
-</code></pre></div>    </div>
-  </li>
-  <li><em>Optional:</em> Initialize search data (creates <code class="highlighter-rouge">search-data.json</code>)
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>just-the-docs rake search:init
-</code></pre></div>    </div>
-  </li>
-  <li>Run you local Jekyll server
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jekyll serve
-</code></pre></div>    </div>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .. or if you're using a Gemfile (bundler)</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Add Just the Docs to your Jekyll site’s <code class="highlighter-rouge">_config.yml</code></li>
+</ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">just-the-docs"</span>
+</code></pre></div></div>
+
+<ol>
+  <li><em>Optional:</em> Initialize search data (creates <code class="highlighter-rouge">search-data.json</code>)</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>just-the-docs rake search:init
+</code></pre></div></div>
+
+<ol>
+  <li>Run you local Jekyll server</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jekyll serve
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .. or if you're using a Gemfile (bundler)</span>
 <span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve
-</code></pre></div>    </div>
-  </li>
+</code></pre></div></div>
+
+<ol>
   <li>Point your web browser to <a href="http://localhost:4000">http://localhost:4000</a></li>
 </ol>
 
