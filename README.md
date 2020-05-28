@@ -1,8 +1,37 @@
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+body {
+font-family: 'Chelsea Market', cursive;
+}
+</style>
+
+</head>
+<body>
+Hello
+</Hello>
+</html>
 # Elixir & Phoenix - Zero to Hero
 
 ## Why this Repo?
 
 There is a lack of good resources online. Most of the content is either outdated or irrelevent as of 2020. The current documentation of both Elixir and Phoenix is difficult to understand. There is no clear roadmap as to how to progress in the Elixir-Phoenix Journey. Most people don't know if Phoenix is the right choice for them. This repo provides the roadmap, main concept guides, cheatsheets, project based learning, and important resources along the way.
+
+This repo is a single source of truth, that can make you aware of the entire landscape of Elixir and Phoenix. This guide transforms your idea of
+
+###### Elixir
+
+> From a magic potion to a functional and extremely robust programming language.
+
+##### &
+
+###### Phoenix
+
+> From a bird to fully-scalable modern web-development framework.
+
+🌟Give a GitHub Star if you understood the joke over there!🤣
 
 ## How to use this Repo?
 
@@ -15,11 +44,13 @@ There is a lack of good resources online. Most of the content is either outdated
 
 ## Which companies are currently using Phoenix and how has it benefitted them?
 
-## When to/ not to use Elixir alongwith Phoenix? What are the alternatives?
+## When to (not to) use Elixir alongwith Phoenix? What are the alternatives?
 
 ## The roadmap for making the Elixir and Phoenix journey
 
 ## Updated Resources
+
+## Best books to learn, and what they offers
 
 ## Mix - Build Tool
 
