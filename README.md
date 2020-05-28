@@ -11,11 +11,14 @@ font-family: 'Chelsea Market', cursive;
 </head>
 <body>
 Hello
+
 </Hello>
 </html>
 # Elixir & Phoenix - Zero to Hero
 
 ## Why this Repo?
+
+<span style="color: #f2cf4a; font-family: 'Chelsea Market'; font-size: 2em;">INSPIRATION DAY</span>
 
 There is a lack of good resources online. Most of the content is either outdated or irrelevent as of 2020. The current documentation of both Elixir and Phoenix is difficult to understand. There is no clear roadmap as to how to progress in the Elixir-Phoenix Journey. Most people don't know if Phoenix is the right choice for them. This repo provides the roadmap, main concept guides, cheatsheets, project based learning, and important resources along the way.
 
