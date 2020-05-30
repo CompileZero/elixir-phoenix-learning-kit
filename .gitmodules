@@ -1,0 +1,3 @@
+[submodule "elixir-website"]
+	path = elixir-website
+	url = https://github.com/CompileZero/elixir-website.git
