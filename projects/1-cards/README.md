@@ -159,3 +159,14 @@ ef load(path) do
 ```
 
 Instead of using case for status, we can use the pattern matching in the above manner. In one step, 2 operations are being done. That is, in the first step, we check whether the status is ok or error, and in the second step, we assign the output value to either `binary` or `reason` depending upon `:ok` and `:error`
+
+💡 If you declare a variable, and do not use it anywhere, then it's going to show you a warning, that variable is unused. To get ride of this error, you can use an `_` underscore before the variable, eg `_reason` so that it overrides the warning:
+
+```elixir
+def load(path) do
+    case File.read(path) do
+      {:ok, binary} -> :erlang.binary_to_term(binary)
+      {:error, _reason} -> "File does not exist"
+    end
+  end
+```
