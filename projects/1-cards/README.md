@@ -37,6 +37,15 @@ You can call function with/without parenthesis
 
 Elixir has implicit return, which means Whenever a method or function runs whatever the last value inside that function is will automatically get returned. So I could have just as easily said Return Hi there or I could just left it off.
 
+```elixir
+def hello do
+    "Hey"
+end
+
+//Function Call
+Cards.hello //This function will implicitly return "Hey"
+
+```
 Lists:
 
 We can define a list of elements by using the bracket notation for an array which is similar to Ruby javascript Java. Tons of other languages. So again nothing too bad here just yet we can create our array or our list as the term we are using a lot. After placing these square braces so directly in here we can put in a first couple of cards as just strings like is two and three. Notice I'm using double quotes in here as opposed to single quotes, They are are supported, but double quotes are convention,
@@ -105,6 +114,10 @@ Solution 2: A much efficient solution.
 
 > Anytime you use equals, think pattern matching
 
+Whenever using pattern matching, you have to make sure, that the no, of elements are equal on the left and right hand side.
+If not, you may get an error like `e:noent` which means 
+> error, no entity.
+
 ### How does elixir work?
 
 ![Elixir Code Execution](media/eli_to_execution.png)
@@ -128,3 +141,21 @@ def load(path) do
 Instead of using ef else blocks, Elixir has a much easier way of using pattern matching, wherein, by using case statements, you can easily assign functions to certain conditions (look in the code above, and if else block would mean another 10 lines of code, which was solved in about 4 lines of code)
 
 ## Pattern Matching in Case Statements
+
+Whenever we see colon and then a word inside of elixir `:ok` this is a primitive data type that we refer to as an atom.
+
+Atoms are used throughout elixir as handling kind of like status codes or messages or handling control flow throughout our application to the most common outer atoms that we're going to see. OK I want to think of them as being exactly like strings.
+
+So right now again I just want you to think of them as being essentially like strings but they're for codifying error messages that only developers can see.
+
+//Add code here
+```elixir
+ef load(path) do
+    case File.read(path) do
+      {:ok, binary} -> :erlang.binary_to_term(binary)
+      {:error, reason} -> "File does not exist"
+    end
+  end
+```
+
+Instead of using case for status, we can use the pattern matching in the above manner. In one step, 2 operations are being done. That is, in the first step, we check whether the status is ok or error, and in the second step, we assign the output value to either `binary` or `reason` depending upon `:ok` and `:error`
