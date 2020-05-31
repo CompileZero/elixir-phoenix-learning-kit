@@ -170,3 +170,41 @@ def load(path) do
     end
   end
 ```
+
+## The Pipe Operator
+
+Sometimes, you might have certain functions which are always called one after the other, over & over again. Eg. in our cards function: We create a deck, shuffle it, and deal a card from it (over and over again). In these cases, its beneficial to create a function, that can do all the 3 things for us.
+
+![Cards Sync Functions](media/sync_functions.png)
+
+So it turns out that this pattern of passing in some amount of data from method to method you know like
+call this thing pass result here past the result here then get the feedback over here is so common elixir
+that the language has its own operator which is called the pipe operator to set up this chain of method
+calls.
+
+Initial Code
+
+```elixir
+def create_hand(hand_size) do
+    deck = Cards.create_deck()
+    deck = Cards.shuffle(deck)
+    hand = Cards.deal(deck, hand_size)
+  end
+```
+
+Refactored Code
+
+```elixir
+def create_hand(hand_size) do    
+    Cards.create_deck
+    |> Cards.shuffle()
+    |> Cards.deal(hand_size)
+  end
+```
+
+Here, `Cards.create_deck` is called first,
+and the returned value is passed on to `Cards.shuffle()` as an argument.
+Finally, the value returned from  `Cards.shuffle()` is passed on to `Cards.deal(hand_size)` as the ***first argument***
+Which means, that the last function is called as `Cards.deal(deck, hand_size)`.
+
+This function is easy to read, write and eliminated unnecessary variable assigns.
