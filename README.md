@@ -1,5 +1,14 @@
 # Elixir & Phoenix - Zero to Hero
 
+### Inspired from Stephen Grider's *The Complete Elixir & Phoenix Bootcamp*
+
+I highly recommend this course, as it explains the fundamentals of everything Elixir & Phoenix required for you to create your own applications.
+Also, the course invariably explains all the concepts using 3 fun projects to work with.
+
+Please buy the course on Udemy.com ()
+
+P.S.: I do not endorse this course nor do I have any affiliation with the author of the course. This is my personal recommendation as I have completed the course, and was able to use it to create the notes that I have in the document below.
+
 ## Why this Repo?
 
 There is a lack of good resources online. Most of the content is either outdated or irrelevent as of 2020. The current documentation of both Elixir and Phoenix is difficult to understand. There is no clear roadmap as to how to progress in the Elixir-Phoenix Journey. Most people don't know if Phoenix is the right choice for them. This repo provides the roadmap, main concept guides, cheatsheets, project based learning, and important resources along the way.

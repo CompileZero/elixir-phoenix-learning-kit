@@ -340,3 +340,6 @@ In the above code, iex runs till line 3, where it calculates the value of `hand`
 
 ## Writing effective doctest
 
+Step 1: Write effective documentation and examples code in the documentation
+Step 2: Make sure you have the `doctest {your_module_name}` in the `{test_file_name}.exs` file.
+ 
