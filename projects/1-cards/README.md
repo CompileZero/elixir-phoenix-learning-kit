@@ -226,3 +226,117 @@ defp deps do
 ```
 
 After defining the dependencies, use `mix deps.get` command in the command line.
+
+## Writing and Generating Documentation
+
+Syntax for writing documentation
+
+```elixir
+@moduledoc """
+Provides methods for creating and handling deck of cards
+
+"""
+```
+
+ex Docs have a super-fun feature, where it creates an entire documentation HTML web-page for your module.
+Use the function `mis docs` to do the same. Output:
+
+```bash
+[a@aa-MacBook-Pro 1-cards (master ✗)]$ mix docs
+==> nimble_parsec
+Compiling 4 files (.ex)
+Generated nimble_parsec app
+==> makeup
+Compiling 44 files (.ex)
+Generated makeup app
+==> earmark
+Compiling 1 file (.yrl)
+Compiling 2 files (.xrl)
+Compiling 3 files (.erl)
+Compiling 32 files (.ex)
+Generated earmark app
+==> makeup_elixir
+Compiling 4 files (.ex)
+Compiling lib/makeup/lexers/elixir_lexer.ex (it's taking more than 15s)
+Generated makeup_elixir app
+==> ex_doc
+Compiling 22 files (.ex)
+Generated ex_doc app
+==> cards
+Compiling 1 file (.ex)
+Generated cards app
+Generating docs...
+View "html" docs at "doc/index.html"
+View "epub" docs at "doc/cards.epub"
+```
+
+To generate documentation for a method just use 
+```elixir
+@doc """
+    Divides a deck into a hand and remainder of the deck.
+    The `hand_size` argument indicates how many cards should be in the hand.
+  """
+```
+
+Now, suppose you want to give an example of what your function does, you can do so by Adding two hashes `##` with a space and `Examples`
+and below, leave 3 total tabs and write your appropriate terminal execution.
+
+Like this:
+
+```elixir
+@doc """
+    Divides a deck into a hand and remainder of the deck.
+    The `hand_size` argument indicates how many cards should be in the hand.
+
+    ## Examples
+       iex> deck = Cards.create_deck()
+       iex> {hand, deck} = Cards.deal(deck,1)
+       iex> hand
+       ["Ace of Spades"]
+  """
+```
+
+![Functions](media/fun_docs.png)
+
+
+## Testing is fully featured, you can do it right out of the box with Elixir.
+
+Elixir gives clear feedback for a failed test case 
+```elixir
+
+  1) test the truth (CardsTest)
+     test/cards_test.exs:5
+     Assertion with == failed
+     code:  assert 1 + 1 == 3
+     left:  2
+     right: 3
+     stacktrace:
+       test/cards_test.exs:6: (test)
+
+
+
+Finished in 0.06 seconds
+1 doctest, 1 test, 1 failure
+```
+
+## DocTest
+
+As you can see even though we have 1 test case, it shows that there are 2 tests running, `1 test` and `1 doctest`, Now, this means, whenever we have an exampel in our documentation, it is treated as a test, and the last value is compared with the final value after running the lines of code present in the example:
+Eg.:
+
+```elixir
+@doc """
+    Divides a deck into a hand and remainder of the deck.
+    The `hand_size` argument indicates how many cards should be in the hand.
+
+    ## Examples
+       iex> deck = Cards.create_deck()
+       iex> {hand, deck} = Cards.deal(deck,1)
+       iex> hand
+       ["Ace of Spades"]
+  """
+```
+In the above code, iex runs till line 3, where it calculates the value of `hand` and compares it  with the last value ie `["Ace of Spades"]`
+
+## Writing effective doctest
+
