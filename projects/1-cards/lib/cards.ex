@@ -40,4 +40,5 @@ defmodule Cards do
       :ok -> :erlang.binary_to_term(binary)
       :error -> "File does not exist"
     end
+  end
 end

@@ -110,3 +110,21 @@ Solution 2: A much efficient solution.
 ![Elixir Code Execution](media/eli_to_execution.png)
 
 ###### Erlang was used for telephony purposes
+
+
+###### Pattern matching continued
+
+```
+def load(path) do
+    {status, binary} = File.read(path)
+
+    case status do
+      :ok -> :erlang.binary_to_term(binary)
+      :error -> "File does not exist"
+    end
+  end
+```
+
+Instead of using ef else blocks, Elixir has a much easier way of using pattern matching, wherein, by using case statements, you can easily assign functions to certain conditions (look in the code above, and if else block would mean another 10 lines of code, which was solved in about 4 lines of code)
+
+## Pattern Matching in Case Statements
