@@ -142,7 +142,7 @@ Instead of using ef else blocks, Elixir has a much easier way of using pattern m
 
 ## Pattern Matching in Case Statements
 
-Whenever we see colon and then a word inside of elixir `:ok` this is a primitive data type that we refer to as an atom.
+Whenever we see colon and then a word inside of elixir `:ok` this is a primitive data type that we refer to as an ***atom / symbol***.
 
 Atoms are used throughout elixir as handling kind of like status codes or messages or handling control flow throughout our application to the most common outer atoms that we're going to see. OK I want to think of them as being exactly like strings.
 
@@ -208,3 +208,21 @@ Finally, the value returned from  `Cards.shuffle()` is passed on to `Cards.deal(
 Which means, that the last function is called as `Cards.deal(deck, hand_size)`.
 
 This function is easy to read, write and eliminated unnecessary variable assigns.
+
+## Module Documentation
+
+Documentation is important for other developers when they try to use your code.
+
+First we'll install a package called X dock into our project and then we'll write the documentation itself.
+The purpose of X dock is to give us the ability to generate a standalone pile of documentation automatically.
+
+In the `mix.exs` file, there is deps, which means dependencies
+```elixir
+defp deps do
+    [
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
+    ]
+  end
+```
+
+After defining the dependencies, use `mix deps.get` command in the command line.
