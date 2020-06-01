@@ -127,7 +127,7 @@ If not, you may get an error like `e:noent` which means
 
 ###### Pattern matching continued
 
-```
+```elixir
 def load(path) do
     {status, binary} = File.read(path)
 
@@ -402,4 +402,22 @@ Map.put(colors, primary, "pink")
 ```
 
 🟠Disadvantage: So this syntax can only be used when we are updating an existing property. It cannot be used when we are trying to add a property to the map.
+
+## Keyword Lists
+
+It's going to be like lists, tuples and maps together.
+
+```elixir
+colors = [{:primary, "red"}, {:secondary, "green"}]
+```
+
+```bash
+iex(2)> colors = [{:primary, "red"}, {:secondary, "green"}]
+[primary: "red", secondary: "green"]
+iex(3)> colors[:primary]
+"red"
+```
+
+In reality, it looks like a key:value pair, elixir still considers it to be a tuple.
+It is used in Ecto, which is library to work with databases. With Ecto, we can form a database query using keyword lists.
 
