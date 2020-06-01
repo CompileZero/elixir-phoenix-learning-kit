@@ -3,7 +3,6 @@
 **TODO: Add description**
 
 ## Description of Project
-
 We would be writing a program to randomly generate an identicon / gravatar, which can be seen on Github Profiles like this:
 
 ![Example 1](media/img_1.png)
@@ -45,3 +44,70 @@ iex(1)> hash = :crypto.hash(:md5, "banana")
 iex(2)> :binary.bin_to_list(hash)
 [114, 179, 2, 191, 41, 122, 34, 138, 117, 115, 1, 35, 239, 239, 124, 65]
 ```
+
+## The Purpose of Hex List
+
+An identicon has a color assigned to it, and a series of rectangles.
+
+#### The process again:
+
+The first 3 values define the RGB value of the color to be used.
+![Color](media/color.png)
+
+###### The grid contains has indices where-in they start from the left hand side, and continue till the middle, and the last two values of a row are just the mirror images of the first two values
+
+![Grid Index](media/grid_index.png)
+
+
+###### Next, the values in the Grid are assigned to the rows in the following manner:
+
+
+![Values in Grid](media/values_in_grid.png)
+###### And, the all the even numbers are colored whereas the odd-numbers are not colored
+
+
+## Data Modeling with Struct
+
+A Struct is a map that is used to store data in an Elixir application. They are just like maps, except with 2 extra properties:
+1. They can store default properties
+2. They have additional compile-time checking properties
+
+##### Create a file `image.ex` whose sole purpose is to hold the struct
+
+Create a struct hex with default value nil:
+
+```elixir
+defstruct hex: nil 
+```
+ ON terminal:
+ ```bash
+iex(2)> %Identicon.Image{}
+%Identicon.Image{hex: nil}
+ ```
+ This creates a new struct with the value nil
+
+```elixir
+def main(input) do
+    input
+    |> hash_input()
+  end
+
+  def hash_input(input) do
+    hex =
+      :crypto.hash(:md5, input)
+      |> :binary.bin_to_list()
+
+    %Identicon.Image{hex: hex}
+  end
+```
+
+Output on Terminal:
+
+```bash
+iex(1)> Identicon.main("asdf")
+%Identicon.Image{
+  hex: [145, 46, 200, 3, 178, 206, 73, 228, 165, 65, 6, 141, 73, 90, 181, 112]
+}
+```
+
+## Pattern matching struct
