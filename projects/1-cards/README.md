@@ -367,3 +367,39 @@ Here, `"Create_deck makes 20 cards"` is a test case which passes when `deck_leng
 What behaviours do you care about in your module? Write those tests.
 
 💡`assert {value 1} == {value 2}` is the same as `refute {value 1} != {value 2}` 
+
+## Intro to Maps
+
+Maps are like plain javascript objects
+Syntax: `colors = %{ primary: "red", secondary: "blue" }`
+
+We can also use pattern matching in maps: `%{secondary: secondary_color} = colors`
+Here, the value of the property `secondary` is stored in the variable `secondary_color`
+
+## Updating Values in Maps
+
+```bash
+iex(1)> colors = %{primary: "red"}
+%{primary: "red"}
+iex(2)> colors.primary = "blue"
+** (CompileError) iex:2: cannot invoke remote function colors.primary/0 inside a match
+```
+It throws an error because we cannot re-assign/update the values once it is declared,
+
+To update a map value, use the `Map.put()` function : 
+
+```elixir
+# Map.put(map, key, value)
+Map.put(colors, primary, "pink")
+```
+
+💡 Map.put() does not update a value in the map, it simply creates a new map with the updated property.
+
+2nd Method 
+
+```elixir
+%{colors | primary: "green"}
+```
+
+🟠Disadvantage: So this syntax can only be used when we are updating an existing property. It cannot be used when we are trying to add a property to the map.
+
