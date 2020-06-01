@@ -32,3 +32,16 @@ Also, the identicon is based on the "name" that is provided and we need to have 
 ## hashing
 
 When we hash a string, we get a series of numbers corresponding to the string
+
+## Create the Main Function
+
+This function has a set of pipe functions which call all the functions of the processes shown in the above image
+
+## Hashing
+
+```bash
+iex(1)> hash = :crypto.hash(:md5, "banana")
+<<114, 179, 2, 191, 41, 122, 34, 138, 117, 115, 1, 35, 239, 239, 124, 65>>
+iex(2)> :binary.bin_to_list(hash)
+[114, 179, 2, 191, 41, 122, 34, 138, 117, 115, 1, 35, 239, 239, 124, 65]
+```
