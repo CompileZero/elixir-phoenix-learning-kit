@@ -20,3 +20,15 @@ We have to generate a 5x5 grid with squares 50px tall and 50px wide: (Total 250p
 
 Also, the identicon is based on the "name" that is provided and we need to have same identicon for the same name: Eg: if "billy" is entered twice, it should display the same identicon everytime
 ![Same Identicon](media/same_identicon.png)
+
+#### The Process
+
+![The Process](media/the_process.png)
+
+## Conversion of String to Image
+
+![Converting String to Image](media/str_img.png)
+
+## hashing
+
+When we hash a string, we get a series of numbers corresponding to the string
