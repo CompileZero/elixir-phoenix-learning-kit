@@ -342,4 +342,28 @@ In the above code, iex runs till line 3, where it calculates the value of `hand`
 
 Step 1: Write effective documentation and examples code in the documentation
 Step 2: Make sure you have the `doctest {your_module_name}` in the `{test_file_name}.exs` file.
- 
+
+
+## Case Tests
+
+In your `cards_test.exs` file, you can add your own test cases, just to test a particular functionality, eg:
+
+```elixir
+defmodule CardsTest do
+  use ExUnit.Case
+  doctest Cards
+
+  test "Create_deck makes 20 cards" do
+    deck_length = length(Cards.create_deck())
+    assert deck_length == 20
+  end
+end
+```
+
+Here, `"Create_deck makes 20 cards"` is a test case which passes when `deck_length` equals `20`
+
+### What to test?
+
+What behaviours do you care about in your module? Write those tests.
+
+💡`assert {value 1} == {value 2}` is the same as `refute {value 1} != {value 2}` 
