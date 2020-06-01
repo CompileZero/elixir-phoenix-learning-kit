@@ -155,3 +155,12 @@ def pick_color(image) do
   end
 ```
 
+## Updating Struct
+
+Extremely Refactored code:
+
+```elixir
+def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
+    %Identicon.Image{image | color: {r, g, b}}
+  end
+```
