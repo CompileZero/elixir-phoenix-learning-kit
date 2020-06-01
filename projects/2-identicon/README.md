@@ -111,3 +111,47 @@ iex(1)> Identicon.main("asdf")
 ```
 
 ## Pattern matching struct
+
+```elixir
+def main(input) do
+    input
+    |> hash_input()
+    |> pick_color()
+  end
+
+  def pick_color(image) do
+    %Identicon.Image{hex: hex_list} = image
+    [r, g, b] = hex_list
+    [r, g, b]
+  end
+```
+
+In the `pick_color(image)` function, we receive `image` as a struct, from which we have to:
+1. Convert struct into a list, 
+2. Receive the first 3 values (as rgb values)
+
+Output on Terminal :
+```bash
+iex(3)> Identicon.main("asdf")
+** (MatchError) no match of right hand side value: [145, 46, 200, 3, 178, 206, 73, 228, 165, 65, 6, 141, 73, 90, 181, 112]
+    (identicon 0.1.0) lib/identicon.ex:23: Identicon.pick_color/1
+```
+
+Here, elixir throws an error, because `hex_list` does not match `[r, g, b]` as it has 16 values in the list and not just 3.
+
+Use this instead: `[r, g, b | _tail] = hex_list` Here, it will give only the first 3 values.
+
+```bash
+iex(5)> Identicon.main("asdf")
+[145, 46, 200]
+```
+
+The code can finally be refactored in the following manner:
+
+```elixir
+def pick_color(image) do
+    %Identicon.Image{hex: [r, g, b | _tail]} = image
+    [r, g, b]
+  end
+```
+
