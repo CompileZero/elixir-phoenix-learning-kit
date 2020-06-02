@@ -72,6 +72,8 @@ A Struct is a map that is used to store data in an Elixir application. They are 
 1. They can store default properties
 2. They have additional compile-time checking properties
 
+## TODO: What exactly is a struct??
+
 ##### Create a file `image.ex` whose sole purpose is to hold the struct
 
 Create a struct hex with default value nil:
@@ -203,3 +205,47 @@ def main(input) do
 
 ## TODO : How is Enum.map() used in this function?? What is the use of /1? 
 
+## Grid Structure
+
+`List.flatten(list)`, converts the nested list into 1 list. (Awesome Function!)
+
+💡 Most of elixir iterations run independent of index!
+
+To use index, use `Enum.with_index()` function
+
+```elixir
+
+iex(28)> list = Identicon.main("asdf")
+[145, 46, 200, 46, 145, 3, 178, 206, 178, 3, 73, 228, 165, 228, 73, 65, 6, 141,
+ 6, 65, 73, 90, 181, 90, 73]
+iex(29)> Enum.with_index(list)
+[
+  {145, 0},
+  {46, 1},
+  {200, 2},
+  {46, 3},
+  {145, 4},
+  {3, 5},
+  {178, 6},
+  {206, 7},
+  {178, 8},
+  {3, 9},
+  {73, 10},
+  {228, 11},
+  {165, 12},
+  {228, 13},
+  {73, 14},
+  {65, 15},
+  {6, 16},
+  {141, 17},
+  {6, 18},
+  {65, 19},
+  {73, 20},
+  {90, 21},
+  {181, 22},
+  {90, 23},
+  {73, 24}
+]
+
+```
+Returns a list of tuples, which have the value and index in it
