@@ -22,8 +22,15 @@ defmodule Identicon do
   def build_grid(%Identicon.Image{hex: hex} = image) do
     hex
     |> Enum.chunk_every(3, 3, :discard)
+    |> Enum.map(&mirror_row/1)
 
     # |> mirror_row
+  end
+
+  def mirror_row(row) do
+    [first, second | _tail] = row
+    ## append to the list function
+    row ++ [second, first]
   end
 
   def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do

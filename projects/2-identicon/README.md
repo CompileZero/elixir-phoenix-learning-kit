@@ -170,3 +170,36 @@ def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
 The process is like this:
 
 ![Chunk](media/chunk.png)
+
+
+We have to create 2 functions, `Enum.chunk_every()` where it segregates 3 elements in a separate list, and also function `mirror_row(row)` where it receives a single row, and then it appends the first 2 values of the row to the end of the row (mirroring the elements)
+
+![Mirror](media/mirror_row.png)
+![Mirror 2](media/mirror_row_2.png)
+
+
+```elixir
+def main(input) do
+    input
+    |> hash_input()
+    |> pick_color()
+    |> build_grid()
+  end
+
+  def build_grid(%Identicon.Image{hex: hex} = image) do
+    hex
+    |> Enum.chunk_every(3, 3, :discard)
+    |> Enum.map(&mirror_row/1)
+
+    # |> mirror_row
+  end
+
+  def mirror_row(row) do
+    [first, second | _tail] = row
+    ## append to the list function
+    row ++ [second, first]
+  end
+```
+
+## TODO : How is Enum.map() used in this function?? What is the use of /1? 
+
