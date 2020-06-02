@@ -249,3 +249,28 @@ iex(29)> Enum.with_index(list)
 
 ```
 Returns a list of tuples, which have the value and index in it
+
+## Giving an Identicon Shape
+
+A new way to write a function, similar to lambda in Python:
+
+final code : 
+
+```elixir
+def main(input) do
+    input
+    |> hash_input()
+    |> pick_color()
+    |> build_grid()
+    |> filter_odd_squares()
+  end
+
+  def filter_odd_squares(%Identicon.Image{grid: grid} = image) do
+    grid =
+      Enum.filter(grid, fn {code, _index} ->
+        rem(code, 2) == 0
+      end)
+
+    %Identicon.Image{image | grid: grid}
+  end
+```
