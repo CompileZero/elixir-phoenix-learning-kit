@@ -164,3 +164,9 @@ def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
     %Identicon.Image{image | color: {r, g, b}}
   end
 ```
+
+## Building the grid
+
+The process is like this:
+
+![Chunk](media/chunk.png)
