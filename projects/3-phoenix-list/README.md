@@ -23,7 +23,7 @@ The exact same steps will be followed to handle an HTTP Request
 ```
 Here `mix` is a build tool, `phx.new` command creates a new phoenix project (Earlier, it was phoenix.new), `discuss` is the name of the project.
 
-#### The app that we are building
+### The app that we are building
 
 ![The Project we are building](media/08-53-21.png)
 
@@ -95,4 +95,29 @@ The main difference between SSR and SPA is that, whenever the user performs any 
 
 Head over to [Materialize CSS](https://materializecss.com/getting-started.html), and copy the CSS CDN. We won't be needing JS CDN in this project.
 
-Head over to `projects/3-phoenix-list/discuss/lib/discuss_web/templates/layout` and in the `app.html.eex` page
+Head over to `projects/3-phoenix-list/discuss/lib/discuss_web/templates/layout` and in the `app.html.eex` page, paste the CDN link.
+
+Run the project by the command [`mix phx.server`](#starting-the-phoenix-liveserver) 
+
+💡 Tip: Make sure you have PostGres SQL running on your machine, otherwise you may see a lot of errors in your terminal.
+
+### MVC in Phoenix
+
+To Understand the MVC (Model-View-Controller) Paradigm, let us consider an analogy:
+
+You want to summarise the process of making muffins to someone else. There are essentially 3 components involved:
+1. The batter itself which is the raw material required to produce muffins
+2. A muffin tray, which puts the batter in a very distinctive shape and size.
+3. A cook, who puts the batter in the muffin tray.
+
+Similarly, while generating a web page like the following:
+
+![Generating a web Page](media/20-49-14.png)
+
+##### The following components are involved in the process:
+![Model-View-Controller Explanation](media/20-49-48.png)
+
+Similar to the previous analogy:
+
+![MVC with Analogy](media/20-50-44.png)
+
