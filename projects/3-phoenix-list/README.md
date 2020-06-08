@@ -76,3 +76,23 @@ The database for Discuss.Repo has been created
 
 ```
 #### Starting the phoenix LiveServer
+
+1. Execute in Terminal : `mix phx.server`
+2. It starts the server at `localhost:4000`
+3. You will be displayed with a nice welcome screen
+
+![Phoenix Initial Welcome Screen](media/09-18-46.png)
+
+#### Server Side Templating vs SPA in Phoenix
+
+![Server Side Templating vs SPA](media/20-28-57.png)
+
+Phoenix supports both the types, initially we start with Server Side Templating, and later on, as we deep-dive into Phoenix, we can head over to SPA kind of an architecture.
+
+The main difference between SSR and SPA is that, whenever the user performs any action, a fresh HTTP request is sent to the server, whereas in SPA, the client (User's Web browser) already loads the entire HTML Document from the server, so when a link is clicked, it does not send a fresh HTTP Request to the server.
+
+#### Setting up Material Design in Phoenix
+
+Head over to [Materialize CSS](https://materializecss.com/getting-started.html), and copy the CSS CDN. We won't be needing JS CDN in this project.
+
+Head over to `projects/3-phoenix-list/discuss/lib/discuss_web/templates/layout` and in the `app.html.eex` page
