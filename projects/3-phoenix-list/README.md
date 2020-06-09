@@ -121,3 +121,13 @@ Similar to the previous analogy:
 
 ![MVC with Analogy](media/20-50-44.png)
 
+💡 The controller (Cook) looks out for a particular data required, for Example : "My Customer requires Blueberry Muffins, so I'm going to make Blueberry Muffins!", Similiarly the controller knows what kind of data the user wants on the UI, and hence takes that particular data from the Model.
+
+🌟 MVC Architecture is not limited to Object Oriented Programming! It can also be applied to Functional Programming paradigm and pretty much any other programming paradigm.
+
+>**☄️ MVC Paradigm <=> MVC Architecture <=> MVC Pattern (People use these terms interchangeably but they essentially mean the same `most of the time`**)
+
+#### What happens when the User makes a request (HTTP, JSON, image, media) to the application
+
+
+![HTTP Request for Phoenix](media/21-05-24.png)
