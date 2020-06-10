@@ -209,10 +209,68 @@ Here, phoenix directly renders the Index.html page, by executing the "page" fold
 
 💡 The names of our Views, Templates, Models & Controllers are closely linked. So naming conventions are important in elixir & phoenix.
 
+### The Model Layer in Phoenix
+
+💡 Phoenix does not care which database you use, but PostGres functionality comes out-of-the-box for the Phoenix Framework. So we have used PostGres Db.
+
+
+Phoenix knows that there is a database, but does not know what data is in the database.
+
+![PostGres / Database Model](media/08-42-39.png)
+
+#### We will create Topic Models
+![Topic Models](media/08-45-10.png)
+
+#### Working with Lists
+
+1. Initially we have an empty database.
+2. We tell PostGres to setup an empty table called "Topics"
+3. This is called Db Migration, where you provide the Db with some instructions to create tables in the Db.
+
+### Creating Migration Files
+
+```bash
+[atharvakulkarni@Atharvas-MacBook-Pro discuss (master ✗)]$ mix ecto.gen.migration add_topics
+* creating priv/repo/migrations/20200610032037_add_topics.exs
+
+```
+You can see the the file is created in :
+`projects/3-phoenix-list/discuss/priv/repo/migrations/20200610032037_add_topics.exs`
+
+#### Creating a table
+
+in the ...add_topics.exs file above, append the following code:
+
+```elixir
+def change do
+    create table(:topics) do
+      add :title, :string
+    end
+  end
+```
+
+This code:
+1. Creates a table with the name "topics"
+2. Adds 1 column: "title" with the type "string"
+
+After you save the code, run this command in terminal:
+
+```bash
+[atharvakulkarni@Atharvas-MacBook-Pro discuss (master ✗)]$ mix ecto.migrate
+
+08:56:13.008 [info]  == Running 20200610032037 Discuss.Repo.Migrations.AddTopics.change/0 forward
+
+08:56:13.011 [info]  create table topics
+
+08:56:13.148 [info]  == Migrated 20200610032037 in 0.1s
+```
+
+You will be able to see that the migration happened almost effortlessly. This means that, now Phoenix knows, that there is a table called "topics" with a column called "title" in our Db.
+
+
 
 
 ## Legend
-
 #### <=> : Which is the same as
 #### 💡: Tip
 #### ⭐️ : Important Point to Remember
