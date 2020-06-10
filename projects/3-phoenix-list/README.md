@@ -83,6 +83,11 @@ The database for Discuss.Repo has been created
 
 ![Phoenix Initial Welcome Screen](media/09-18-46.png)
 
+
+#### 💡 Whenever starting the liveServer, make sure you have PostGres running. I have installed PostGres as an application, so its easier for me that way
+
+![PostGres Application Screenshot](media/08-15-46.png)
+
 #### Server Side Templating vs SPA in Phoenix
 
 ![Server Side Templating vs SPA](media/20-28-57.png)
@@ -162,6 +167,48 @@ def index(conn, _params) do
 ```
 
 The `render` function renders the `index.html` file along with data in the `conn` object.
+
+The name `PageController` is a default controller to work with when we first generate our project. Our actual project would consist of other controllers and this one would be deleted.
+
+
+
+### Views vs Templates in Phoenix
+
+In the `projects/3-phoenix-list/discuss/lib/discuss_web/views/page_view.ex` page_view.ex file, we have a module defined as `PageView`. 
+
+What does Phoenix do behind the scenes?
+
+1. It takes the module-name `PageView` and searches for the string `Page` (the prefix of PageView), and searches for a "page" folder in the "templates" folder. 
+2. If found, it executes all the files present in the "page" folder.
+
+![Views vs Templates](media/08-18-21.png)
+
+Executing the code:
+
+
+```bash
+[atharvakulkarni@Atharvas-MacBook-Pro discuss (master ✗)]$ iex -S mix phx.server
+Erlang/OTP 23 [erts-11.0] [source] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:1] [hipe] [dtrace]
+
+[info] Running DiscussWeb.Endpoint with cowboy 2.8.0 at 0.0.0.0:4000 (http)
+[info] Access DiscussWeb.Endpoint at http://localhost:4000
+Interactive Elixir (1.10.3) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)> 
+nil
+
+iex(3)> DiscussWeb.PageView
+DiscussWeb.PageView
+iex(4)> DiscussWeb.PageView.render("index.html")
+{:safe,
+ ["<section class=\"phx-hero\">\n  <h1>", "Welcome to Phoenix!",
+  "</h1>\n  <p>Peace-of-mind from prototype to production</p>\n</section>\n\n<section class=\"row\">\n  <article class=\"column\">\n    <h2>Resources</h2>\n    <ul>\n      <li>\n        <a href=\"https://hexdocs.pm/phoenix/overview.html\">Guides &amp; Docs</a>\n      </li>\n      <li>\n        <a href=\"https://github.com/phoenixframework/phoenix\">Source</a>\n      </li>\n      <li>\n        <a\n          href=\"https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md\"\n          >v1.5 Changelog</a\n        >\n      </li>\n      <li>\n        <a href=\"https://google.com\">Google</a>\n      </li>\n    </ul>\n  </article>\n  <article class=\"column\">\n    <h2>Help</h2>\n    <ul>\n      <li>\n        <a href=\"https://elixirforum.com/c/phoenix-forum\">Forum</a>\n      </li>\n      <li>\n        <a href=\"https://webchat.freenode.net/?channels=elixir-lang\"\n          >#elixir-lang on Freenode IRC</a\n        >\n      </li>\n      <li>\n        <a href=\"https://twitter.com/elixirphoenix\">Twitter @elixirphoenix</a>\n      </li>\n      <li>\n        <a href=\"https://elixir-slackin.herokuapp.com/\">Elixir on Slack</a>\n      </li>\n    </ul>\n  </article>\n</section>\n"]}
+
+```
+
+Here, phoenix directly renders the Index.html page, by executing the "page" folder files directly from PageView module.
+
+💡 The names of our Views, Templates, Models & Controllers are closely linked. So naming conventions are important in elixir & phoenix.
+
 
 
 ## Legend
