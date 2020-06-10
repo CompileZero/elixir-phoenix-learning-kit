@@ -1,0 +1,55 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "elixir-website": {
+      "name": "elixir-website",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "projects": {
+      "name": "projects",
+      "isOrdered": true,
+      "folders": {
+        "1-cards": {
+          "name": "1-cards",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "2-identicon": {
+          "name": "2-identicon",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "3-phoenix-list": {
+          "name": "3-phoenix-list",
+          "isOrdered": true,
+          "folders": {
+            "discuss": {
+              "name": "discuss",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "media": {
+              "name": "media",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {
+            "README": 0
+          }
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}
