@@ -268,6 +268,32 @@ After you save the code, run this command in terminal:
 You will be able to see that the migration happened almost effortlessly. This means that, now Phoenix knows, that there is a table called "topics" with a column called "title" in our Db.
 
 
+#### Looking at out Db Visually
+
+Install a GUI Tool for PostGres: Postico (Download for Mac from [here](https://eggerapps.at/postico/))
+
+This tool will help us visualise the databases and tables we will create further.
+
+![Postico Edit Settings](media/09-03-33.png)
+
+Postico Default Settings:
+1. A favourite is created. Add a name "local"
+2. The Host and Port is default.
+3. The Username is your username
+4. The Database is "discuss_dev" which we have just created.
+5. Click on "Connect"
+
+![Db Connected Postico](media/09-05-39.png)
+
+You see that a table with the name "Topics" has been created. If you go to the table, you will see a blank table with 2 columns:
+1. id
+2. title
+
+This means that our Db migration was successful. And whenever we will add any data to this table, thro' Phoenix, the data will be shown in the GUI.
+
+
+
+
 
 
 ## Legend
