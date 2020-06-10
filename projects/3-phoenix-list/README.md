@@ -320,6 +320,25 @@ What Happens here? The line of code means
 
 ![Common Conventions](media/09-19-04.png)
 
+### Setting up Topic Controller
+
+1. Create a new file `topic_controller.ex` in `projects/3-phoenix-list/discuss/lib/discuss_web/controllers/`
+2. Add the following code:
+  ```elixir
+  defmodule DiscussWeb.TopicController do
+    
+  end
+  ```
+3. Run `mix phx.server` in the terminal.
+
+  ![Undefined Error Messages](media/09-25-59.png)
+
+4. You will be shown an error message: *...init/1* is undefined, meaning no init function is defined in our `TopicController` module
+5. We have to **inherit** another base class called "ControllerBaseClass" which has certain default functions already defined in Elixir, ![Cont Base Class](media/09-30-07.png)
+6. But there is no such provision to "inherit" a class in Elixir (It is not object-oriented right?)
+7. We have 3 solutions for this kind of a problem ![Import Keywords](media/09-31-40.png)
+8. The Import Keyword:![Import Keyword](media/09-32-27.png) (Topic Controller has both add and log functions/methods)
+9. The alias keyword: ![Alias Keyword](media/09-33-17.png) ![Alias Keyword 2](media/09-34-21.png) (Calling Math.add works as well because it is a direct reference to the function, but we use alias, and then we can directly use add function without "Math.")
 
 
 ## Legend
