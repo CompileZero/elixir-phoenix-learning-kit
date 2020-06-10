@@ -292,7 +292,33 @@ You see that a table with the name "Topics" has been created. If you go to the t
 This means that our Db migration was successful. And whenever we will add any data to this table, thro' Phoenix, the data will be shown in the GUI.
 
 
+#### "Add new Topic"
 
+We want to create a page, where the user can Add New Topics to our Database,
+Here is a list of potential problems and solutions for our new page:
+
+![Add Topics Problems and Solutions](media/09-09-57.png)
+![Add Topics Problems and Solutions 2](media/09-11-01.png)
+
+#### Adding a route to our controller
+
+In the `router.ex` file, add a line of code as follows
+
+```elixir
+scope "/", DiscussWeb do
+    pipe_through :browser
+
+    get "/", PageController, :index
+    get "/topics/new", TopicController, :new #New Line
+  end
+
+```
+What Happens here? The line of code means
+1. Whenever the user visits the path "topics/new" page, activate the `Topic Controller`, and execute the `new` function
+
+ Phoenix follows restful conventions:
+
+![Common Conventions](media/09-19-04.png)
 
 
 
