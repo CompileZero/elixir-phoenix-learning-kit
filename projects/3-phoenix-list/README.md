@@ -452,9 +452,37 @@ In Elixir:
    ```bash
    > mix phx.gen.schema Topic topics title:string
    ```
-   📔 This creates a schema of topic in the /lib/discuss folder.
+   📔 This creates a schema of `topic` in the /lib/discuss folder.
 2. A `Model` is used to communicate between Phoenix and the Database
 3. A `Schema` has the protocols used to connect and fetch values from the Db to the Elixir Struct.
+
+
+#### Creating a changeset
+
+```bash
+iex(1)> struct = %Discuss.Topic{}
+%Discuss.Topic{
+  __meta__: #Ecto.Schema.Metadata<:built, "topics">,
+  id: nil,
+  inserted_at: nil,
+  title: nil,
+  updated_at: nil
+}
+iex(2)> params = %{title: "Great JS"}
+%{title: "Great JS"}
+iex(3)> Discuss.Topic.changeset(struct, params)
+#Ecto.Changeset<
+  action: nil,
+  changes: %{title: "Great JS"},
+  errors: [],
+  data: #Discuss.Topic<>,
+  valid?: true
+>
+```
+📔 Explanation:
+1. 1st Line: In this schema call, a new struct is created, based on the information that we have provided in the schema.
+2. 2nd Line: A params object is created, (Params is the data that we want to change in the database)
+3. 3rd Line: `changeset(struct, params)` function is called. It shows the changes that need to be. Eg.: `changes: %{title: "Great JS"}` 
  
 Steps to Document:
 1. Use ### to signify a topic
