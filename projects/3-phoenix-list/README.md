@@ -483,6 +483,27 @@ iex(3)> Discuss.Topic.changeset(struct, params)
 1. 1st Line: In this schema call, a new struct is created, based on the information that we have provided in the schema.
 2. 2nd Line: A params object is created, (Params is the data that we want to change in the database)
 3. 3rd Line: `changeset(struct, params)` function is called. It shows the changes that need to be. Eg.: `changes: %{title: "Great JS"}` 
+
+🌟 In `changeset(struct, params \\ %{})`, the `\\ %{}` means that this is a default value that would be passed, `params` is missing.
+
+#### Generating Changesets
+
+`topic_controller.ex`
+```elixir
+alias Discuss.Topic
+
+  def new(conn, params) do
+    struct = %Topic{}
+    params = %{}
+    changeset = Topic.changeset(%Topic{}, %{})
+  end
+```
+1. 💡 Use alias when using the module many number of times.
+2. 📔 The code will create a struct, params and a changeset whenever `new` function is called.
+
+# Changeset + Form Template = Usable Form
+
+
  
 Steps to Document:
 1. Use ### to signify a topic
