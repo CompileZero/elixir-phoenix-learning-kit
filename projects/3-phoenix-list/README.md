@@ -437,8 +437,25 @@ end
 
 1. 🌟 Phoenix >1.3, a lot of changes have occured since then. 1.5 does not have a `models` directory, it contains a lib folder which is further broken down into "discuss" and "discuss_web" folders. The "discuss" folder contains the `model` of the Discuss project. 
 
+#### OOP Approach to Models
+
+![OOP Approach to Model](media/11-58-19.png)
 
 
+![FP Approach to](media/12-01-49.png)
+
+### Creating a model in Phoenix
+
+In Elixir:
+
+1. In the terminal:
+   ```bash
+   > mix phx.gen.schema Topic topics title:string
+   ```
+   📔 This creates a schema of topic in the /lib/discuss folder.
+2. A `Model` is used to communicate between Phoenix and the Database
+3. A `Schema` has the protocols used to connect and fetch values from the Db to the Elixir Struct.
+ 
 Steps to Document:
 1. Use ### to signify a topic
 2. Use #### to signify a sub-topic 
