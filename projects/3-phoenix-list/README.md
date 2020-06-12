@@ -358,7 +358,7 @@ end
 #### 📔 Code Explanation
 
 1. This code is used to debug our /topics/new page, when it throws an error. `puts` is used to append the line on the terminal whereas `inspect` is used to loop through the entire structure/function and output every line on the terminal.
-2. Conn is an object in Elixir Struct, that represents both the Incoming and Outgoing Requests in our webpage. It is one of the most important objects for a web-project.
+2. 🏔 Conn is an object in Elixir Struct, that represents both the Incoming and Outgoing Requests in our webpage. It is one of the most important objects for a web-project.
    ```bash
    %Plug.Conn{
   adapter: {Plug.Cowboy.Conn, :...},
@@ -426,10 +426,17 @@ end
     {"cross-origin-window-policy", "deny"}
   ],
    ```
-   #### 📔 1. As you can see, the obejct has 2 kinds of params, one for the incoming requests (like cookies, halted, host, method etc.) and one for output responses (outgoing requests like resp-headers, resp-cookies, resp-body etc.)
+   #### 📔 1. As you can see, the object has 2 kinds of params, one for the incoming requests (like cookies, halted, host, method etc.) and one for output responses (outgoing requests like resp-headers, resp-cookies, resp-body etc.)
    #### 2. Since we are not sending any data in the body, the `resp.body` is `nil`
 3. On the web-page, you might see an error like this : `expected action/2 to return a Plug.Conn, all plugs must receive a connection (conn) and return a connection, got: :ok` : 📔 This means that, a function is only defined in the module, but it does not perform any action.
-4. 
+
+
+### Models in Phoenix
+
+#### Topic Model
+
+1. 🌟 Phoenix >1.3, a lot of changes have occured since then. 1.5 does not have a `models` directory, it contains a lib folder which is further broken down into "discuss" and "discuss_web" folders. The "discuss" folder contains the `model` of the Discuss project. 
+
 
 
 Steps to Document:
@@ -443,8 +450,9 @@ Steps to Document:
       1. Add the code snippet
       2. Add a ###### Explanation
       3. Explain the code in points
-4. Use 💡 and ⭐️ for Tips and Points to remember later respectively.
+4. Use 💡 and ⭐️ for Tips and Point to remember later respectively.
 ## Legend
+#### 🏔 : Definition
 #### 📔 : Code Explanation
 #### <=> : Which is the same as
 #### 💡: Tip
