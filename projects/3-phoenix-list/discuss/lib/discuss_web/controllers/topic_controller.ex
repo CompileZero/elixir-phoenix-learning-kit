@@ -4,8 +4,7 @@ defmodule DiscussWeb.TopicController do
   alias Discuss.Topic
 
   def new(conn, params) do
-    struct = %Topic{}
-    params = %{}
     changeset = Topic.changeset(%Topic{}, %{})
+    render(conn, "new.html", changeset: changeset)
   end
 end

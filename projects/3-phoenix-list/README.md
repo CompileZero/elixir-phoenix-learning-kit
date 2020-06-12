@@ -504,6 +504,47 @@ alias Discuss.Topic
 # Changeset + Form Template = Usable Form
 
 
+#### Creating a form
+
+##### Creating a View
+
+1. In the `/views/` folder, create a new file `topic_view.ex` file and add the following code:
+   
+```elixir
+defmodule DiscussWeb.TopicView do
+  use DiscussWeb, :view
+end
+```
+
+2. 📔 `use Discuss.Web, :view` indicates that the module `TopicView` will inherit the properties of `view`. (A way of informing Phoenix that this file is going to be used as a `view`)
+
+##### Creating a template
+1. Create a file `new.html.eex` in the folder `/templates/topic` folder
+2. Add dummy code like `<h1>New Topic Form</h1>`
+3. In the `topic_controller.ex` file, add the code `render(conn, "new.html")`
+4. Execute code using `mix phx.server`
+
+Output:
+![Add New Topics](media/16-56-33.png)
+
+
+#### Creating the Form
+
+Phoenix has given a privilege to create an html file using Elixir Code.
+
+```html
+<%= form_for @changeset, topic_path(@conn, :create), fn f -> %>
+<div class="form-group">
+    <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
+</div>
+
+<%= submit "Save Topic", class: "btn btn-primary" %>
+<% end %>
+
+```
+🌟 Points to Remember
+1. `<%=` Tells the `.html.eex`, that the next would be an elixir code.
+2. `@` is used to denote that that variable will be passed to the function encompassing it. Eg: in  `form_for(@changeset, ...)`, changeset is a variable that is received from the `render` function call in `topic_controller.ex` file.
  
 Steps to Document:
 1. Use ### to signify a topic
