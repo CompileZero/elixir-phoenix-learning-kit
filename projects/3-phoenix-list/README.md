@@ -340,8 +340,112 @@ What Happens here? The line of code means
 8. The Import Keyword:![Import Keyword](media/09-32-27.png) (Topic Controller has both add and log functions/methods)
 9. The alias keyword: ![Alias Keyword](media/09-33-17.png) ![Alias Keyword 2](media/09-34-21.png) (Calling Math.add works as well because it is a direct reference to the function, but we use alias, and then we can directly use add function without "Math.")
 
+[topic_controller.ex]
+```elixir
+defmodule DiscussWeb.TopicController do
+  use DiscussWeb, :controller
 
+  def new(conn, params) do
+    IO.puts("++++")
+    IO.inspect(conn)
+    IO.puts("++++")
+    IO.inspect(params)
+    IO.puts("++++")
+  end
+end
+```
+
+#### 📔 Code Explanation
+
+1. This code is used to debug our /topics/new page, when it throws an error. `puts` is used to append the line on the terminal whereas `inspect` is used to loop through the entire structure/function and output every line on the terminal.
+2. Conn is an object in Elixir Struct, that represents both the Incoming and Outgoing Requests in our webpage. It is one of the most important objects for a web-project.
+   ```bash
+   %Plug.Conn{
+  adapter: {Plug.Cowboy.Conn, :...},
+  assigns: %{},
+  before_send: [#Function<0.73641281/1 in Plug.CSRFProtection.call/2>,
+   #Function<2.102658996/1 in Phoenix.Controller.fetch_flash/2>,
+   #Function<0.105793137/1 in Plug.Session.before_send/2>,
+   #Function<0.60895335/1 in Plug.Telemetry.call/2>,
+   #Function<0.18437642/1 in Phoenix.LiveReloader.before_send_inject_reloader/2>],
+  body_params: %{},
+  cookies: %{"_ga" => "GA1.1.38883163.1590675858"},
+  halted: false,
+  host: "localhost",
+  method: "GET",
+  owner: #PID<0.566.0>,
+  params: %{},
+  path_info: ["topics", "new"],
+  path_params: %{},
+  port: 4000,
+  private: %{
+    DiscussWeb.Router => {[], %{}},
+    :phoenix_action => :new,
+    :phoenix_controller => DiscussWeb.TopicController,
+    :phoenix_endpoint => DiscussWeb.Endpoint,
+    :phoenix_flash => %{},
+    :phoenix_format => "html",
+    :phoenix_layout => {DiscussWeb.LayoutView, :app},
+    :phoenix_request_logger => {"request_logger", "request_logger"},
+    :phoenix_router => DiscussWeb.Router,
+    :phoenix_view => DiscussWeb.TopicView,
+    :plug_session => %{},
+    :plug_session_fetch => :done
+  },
+  query_params: %{},
+  query_string: "",
+  remote_ip: {127, 0, 0, 1},
+  req_cookies: %{"_ga" => "GA1.1.38883163.1590675858"},
+  req_headers: [
+    {"accept",
+     "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"},
+    {"accept-encoding", "gzip, deflate, br"},
+    {"accept-language", "en-US,en;q=0.9"},
+    {"connection", "keep-alive"},
+    {"cookie", "_ga=GA1.1.38883163.1590675858"},
+    {"host", "localhost:4000"},
+    {"sec-fetch-dest", "document"},
+    {"sec-fetch-mode", "navigate"},
+    {"sec-fetch-site", "none"},
+    {"sec-fetch-user", "?1"},
+    {"upgrade-insecure-requests", "1"},
+    {"user-agent",
+     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"}
+  ],
+  request_path: "/topics/new",
+  resp_body: nil,
+  resp_cookies: %{},
+  resp_headers: [
+    {"cache-control", "max-age=0, private, must-revalidate"},
+    {"x-request-id", "Fhe1OlxaueAX_SwAAAIC"},
+    {"x-frame-options", "SAMEORIGIN"},
+    {"x-xss-protection", "1; mode=block"},
+    {"x-content-type-options", "nosniff"},
+    {"x-download-options", "noopen"},
+    {"x-permitted-cross-domain-policies", "none"},
+    {"cross-origin-window-policy", "deny"}
+  ],
+   ```
+   #### 📔 1. As you can see, the obejct has 2 kinds of params, one for the incoming requests (like cookies, halted, host, method etc.) and one for output responses (outgoing requests like resp-headers, resp-cookies, resp-body etc.)
+   #### 2. Since we are not sending any data in the body, the `resp.body` is `nil`
+3. On the web-page, you might see an error like this : `expected action/2 to return a Plug.Conn, all plugs must receive a connection (conn) and return a connection, got: :ok` : 📔 This means that, a function is only defined in the module, but it does not perform any action.
+4. 
+
+
+Steps to Document:
+1. Use ### to signify a topic
+2. Use #### to signify a sub-topic 
+3. There are 2 types:
+   1. If a concept is explained:
+      1. Add a diagram
+      2. Explain the Diagram in Points
+   2. If a code is explained:
+      1. Add the code snippet
+      2. Add a ###### Explanation
+      3. Explain the code in points
+4. Use 💡 and ⭐️ for Tips and Points to remember later respectively.
 ## Legend
+#### 📔 : Code Explanation
 #### <=> : Which is the same as
 #### 💡: Tip
 #### ⭐️ : Important Point to Remember
