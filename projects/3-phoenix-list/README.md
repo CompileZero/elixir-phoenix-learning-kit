@@ -533,7 +533,7 @@ Output:
 Phoenix has given a privilege to create an html file using Elixir Code.
 
 ```html
-<%= form_for @changeset, topic_path(@conn, :create), fn f -> %>
+<%= form_for @changeset, Routes.topic_path(@conn, :create), fn f -> %>
 <div class="form-group">
     <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
 </div>
@@ -545,7 +545,19 @@ Phoenix has given a privilege to create an html file using Elixir Code.
 🌟 Points to Remember
 1. `<%=` Tells the `.html.eex`, that the next would be an elixir code.
 2. `@` is used to denote that that variable will be passed to the function encompassing it. Eg: in  `form_for(@changeset, ...)`, changeset is a variable that is received from the `render` function call in `topic_controller.ex` file.
- 
+
+Running the above code gives the following error:
+
+#### `lib/discuss_web/templates/topic/new.html.eex:1: undefined function topic_path/2`
+
+This means in the `<%= form_for @changeset, Routes.topic_path(@conn, :create), fn f -> %>` we have used `:create` but haven't defined what `:create` will do. So, we need to create a new route, to satisfy that error message.
+
+-> Add `post("/topics", TopicController, :create)` to `router.ex`. Run the program.
+
+
+
+
+
 Steps to Document:
 1. Use ### to signify a topic
 2. Use #### to signify a sub-topic 
