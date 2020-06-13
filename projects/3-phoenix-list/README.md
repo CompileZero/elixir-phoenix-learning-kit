@@ -554,9 +554,16 @@ This means in the `<%= form_for @changeset, Routes.topic_path(@conn, :create), f
 
 -> Add `post("/topics", TopicController, :create)` to `router.ex`. Run the program.
 
+💡 `topic_path` is a helper used to route your webpage respectively.
 
 
+💡 Use `mix phx.routes` to look at the routes defined in the project.
 
+#### Reason for using Built-in Form Helpers Provided by Phoenix
+
+![Using Built-in from helpers](media/11-00-05.png)
+
+##### Almost everything is defined in the phoenix built-in forms. So without using any other HTML or CSS libraries and without having to code much, you are able to write the perfect HTML form. This is why they say that Phoenix framework is built for development productivity.
 
 Steps to Document:
 1. Use ### to signify a topic
