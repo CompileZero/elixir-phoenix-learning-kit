@@ -1,16 +1,5 @@
-# Elixir & Phoenix - Zero to Hero
-
-### Inspired from Stephen Grider's *The Complete Elixir & Phoenix Bootcamp*
-
-I highly recommend this course, as it explains the fundamentals of everything Elixir & Phoenix required for you to create your own applications.
-Also, the course invariably explains all the concepts using 3 fun projects to work with.
-
-Please buy the course on Udemy.com ()
-
-P.S.: I do not endorse this course nor do I have any affiliation with the author of the course. This is my personal recommendation as I have completed the course, and was able to use it to create the notes that I have in the document below.
-
 # The Elixir Learning Kit you really need
-{: .fs-9 }
+
 
 ## Kit vs Course
 
